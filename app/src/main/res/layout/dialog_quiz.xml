@@ -1,65 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:layout_direction="rtl">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvFrenchWord"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bonjour"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="24dp" />
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_direction="rtl">
 
-    <RadioGroup
-        android:id="@+id/rgOptions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp">
-
-        <RadioButton
-            android:id="@+id/rbOption1"
+        <TextView
+            android:id="@+id/tvFrenchWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 1"
-            android:padding="12dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_option"
-            android:button="@null" />
+            android:text="Bonjour"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
 
-        <RadioButton
-            android:id="@+id/rbOption2"
+        <RadioGroup
+            android:id="@+id/rgOptions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 2"
-            android:padding="12dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_option"
-            android:button="@null" />
+            android:layout_marginBottom="24dp">
 
-        <RadioButton
-            android:id="@+id/rbOption3"
+            <RadioButton
+                android:id="@+id/rbOption1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 1"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_option"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/rbOption2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 2"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_option"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/rbOption3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option 3"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_option"
+                android:button="@null" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 3"
-            android:padding="12dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_option"
-            android:button="@null" />
-    </RadioGroup>
+            android:text="تحقق"
+            android:padding="16dp"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="تحقق"
-        android:padding="16dp"
-        app:cornerRadius="12dp" />
+        <Button
+            android:id="@+id/btnAiExplain"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="اشرح لي باستخدام الذكاء الاصطناعي ✨"
+            android:layout_marginBottom="16dp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvAiExplanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="?attr/colorPrimary"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

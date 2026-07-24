@@ -1,14 +1,15 @@
 package com.manus.motsmagiques
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.manus.motsmagiques.databinding.ActivityMainBinding
-import androidx.appcompat.app.AlertDialog
 import com.manus.motsmagiques.databinding.DialogQuizBinding
-import android.view.LayoutInflater
-import android.widget.RadioButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -68,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         val options = mutableListOf(randomWord.arabicTranslation)
         val otherWords = words.filter { it.id != randomWord.id }.shuffled()
         
-        // Ensure we have enough options
         if (otherWords.size >= 2) {
             options.add(otherWords[0].arabicTranslation)
             options.add(otherWords[1].arabicTranslation)
@@ -92,6 +92,20 @@ class MainActivity : AppCompatActivity() {
         dialogBinding.rbOption1.text = options[0]
         dialogBinding.rbOption2.text = options[1]
         dialogBinding.rbOption3.text = options[2]
+
+        viewModel.aiExplanation.observe(this) { explanation ->
+            if (explanation != null) {
+                dialogBinding.tvAiExplanation.text = explanation
+                dialogBinding.tvAiExplanation.visibility = View.VISIBLE
+            }
+        }
+
+        dialogBinding.btnAiExplain.setOnClickListener {
+            dialogBinding.btnAiExplain.isEnabled = false
+            dialogBinding.tvAiExplanation.text = "جاري التحليل..."
+            dialogBinding.tvAiExplanation.visibility = View.VISIBLE
+            viewModel.fetchAiExplanation(word.frenchWord)
+        }
 
         dialogBinding.btnSubmit.setOnClickListener {
             val selectedId = dialogBinding.rgOptions.checkedRadioButtonId

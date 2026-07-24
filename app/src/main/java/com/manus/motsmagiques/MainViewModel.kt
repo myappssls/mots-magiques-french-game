@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: WordRepository
+    private val geminiService = GeminiService()
     val allWords: LiveData<List<WordEntity>>
 
     private val _xp = MutableLiveData(0)
@@ -18,6 +19,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _streak = MutableLiveData(0)
     val streak: LiveData<Int> = _streak
+
+    private val _aiExplanation = MutableLiveData<String?>()
+    val aiExplanation: LiveData<String?> = _aiExplanation
 
     init {
         val wordDao = AppDatabase.getDatabase(application).wordDao()
@@ -37,6 +41,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 val words: List<WordEntity> = Gson().fromJson(jsonString, listType)
                 repository.insertAll(words)
             }
+        }
+    }
+
+    fun fetchAiExplanation(word: String) {
+        viewModelScope.launch {
+            val explanation = geminiService.getGrammarExplanation(word)
+            _aiExplanation.value = explanation
         }
     }
 
@@ -78,7 +89,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    // New function to add a word dynamically from the internet
     fun addNewWordFromInternet(frenchWord: String) {
         viewModelScope.launch {
             val arabicTranslation = repository.fetchTranslationOnline(frenchWord)
