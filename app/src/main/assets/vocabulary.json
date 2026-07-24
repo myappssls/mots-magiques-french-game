@@ -1,0 +1,74 @@
+[
+  {
+    "frenchWord": "Bonjour",
+    "arabicTranslation": "مرحبا",
+    "category": "Salutations",
+    "level": 1
+  },
+  {
+    "frenchWord": "Merci",
+    "arabicTranslation": "شكراً",
+    "category": "Salutations",
+    "level": 1
+  },
+  {
+    "frenchWord": "S'il vous plaît",
+    "arabicTranslation": "من فضلك",
+    "category": "Salutations",
+    "level": 1
+  },
+  {
+    "frenchWord": "Un",
+    "arabicTranslation": "واحد",
+    "category": "Nombres",
+    "level": 1
+  },
+  {
+    "frenchWord": "Deux",
+    "arabicTranslation": "اثنان",
+    "category": "Nombres",
+    "level": 1
+  },
+  {
+    "frenchWord": "Trois",
+    "arabicTranslation": "ثلاثة",
+    "category": "Nombres",
+    "level": 1
+  },
+  {
+    "frenchWord": "Rouge",
+    "arabicTranslation": "أحمر",
+    "category": "Couleurs",
+    "level": 1
+  },
+  {
+    "frenchWord": "Bleu",
+    "arabicTranslation": "أزرق",
+    "category": "Couleurs",
+    "level": 1
+  },
+  {
+    "frenchWord": "Vert",
+    "arabicTranslation": "أخضر",
+    "category": "Couleurs",
+    "level": 1
+  },
+  {
+    "frenchWord": "Je suis",
+    "arabicTranslation": "أنا أكون",
+    "category": "Verbes",
+    "level": 2
+  },
+  {
+    "frenchWord": "Tu es",
+    "arabicTranslation": "أنت تكون",
+    "category": "Verbes",
+    "level": 2
+  },
+  {
+    "frenchWord": "Il est",
+    "arabicTranslation": "هو يكون",
+    "category": "Verbes",
+    "level": 2
+  }
+]

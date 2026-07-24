@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mots Magiques</string>
+    <string name="welcome_message">مرحباً بك في Mots Magiques!</string>
+    <string name="adventure_map">خريطة المغامرة</string>
+    <string name="time_attack">تحدي الوقت</string>
+    <string name="xp_label">XP: %d</string>
+    <string name="level_label">المستوى: %d</string>
+    <string name="streak_label">السلسلة: %d أيام</string>
+</resources>
